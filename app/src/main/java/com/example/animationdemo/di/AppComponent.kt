@@ -1,7 +1,7 @@
 package com.example.animationdemo.di
 
 import android.app.Application
-import com.example.animationdemo.ui.activities.BaseActivity
+import com.example.animationdemo.ui.fragments.home.HomeFragment
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -16,5 +16,5 @@ interface AppComponent {
         fun create(@BindsInstance application: Application): AppComponent
     }
 
-    fun inject(baseActivity: BaseActivity)
+    fun inject(homeFragment: HomeFragment)
 }

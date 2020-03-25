@@ -6,8 +6,9 @@ import com.example.animationdemo.data.source.local.LocalDataSource
 import com.example.animationdemo.data.source.local.entities.Course
 import javax.inject.Inject
 
-class DataRepository @Inject constructor(private val localDataSource: LocalDataSource) :
-    DataSource {
+class DataRepository @Inject constructor(
+    private val localDataSource: LocalDataSource
+) : DataSource {
 
     override fun newCourse(course: Course) {
         localDataSource.newCourse(course)

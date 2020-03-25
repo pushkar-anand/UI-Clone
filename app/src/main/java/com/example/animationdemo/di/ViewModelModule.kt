@@ -2,7 +2,7 @@ package com.example.animationdemo.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.animationdemo.ui.activities.TestViewModel
+import com.example.animationdemo.ui.fragments.home.HomeViewModel
 import dagger.Binds
 import dagger.MapKey
 import dagger.Module
@@ -13,21 +13,22 @@ import kotlin.reflect.KClass
 @Module
 abstract class ViewModelModule {
 
+    @Target(
+        AnnotationTarget.FUNCTION,
+        AnnotationTarget.PROPERTY_GETTER,
+        AnnotationTarget.PROPERTY_SETTER
+    )
+    @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+    @MapKey
+    internal annotation class ViewModelKey(val value: KClass<out ViewModel>)
+
     @Binds
     internal abstract fun bindViewModelFactory(factory: AppViewModelFactory): ViewModelProvider.Factory
 
+
     @Binds
     @IntoMap
-    @ViewModelKey(TestViewModel::class)
-    internal abstract fun testViewModel(viewModel: TestViewModel): ViewModel
+    @ViewModelKey(HomeViewModel::class)
+    internal abstract fun homeViewModel(viewModel: HomeViewModel): ViewModel
 
 }
-
-@Target(
-    AnnotationTarget.FUNCTION,
-    AnnotationTarget.PROPERTY_GETTER,
-    AnnotationTarget.PROPERTY_SETTER
-)
-@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-@MapKey
-internal annotation class ViewModelKey(val value: KClass<out ViewModel>)
