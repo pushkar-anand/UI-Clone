@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+
+android {
+
+    compileSdkVersion 29
+
+    defaultConfig {
+        applicationId "com.example.animationdemo"
+        minSdkVersion 22
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+
+    ext {
+        core_version = "1.2.0"
+        appcompat_version = "1.1.0"
+        room_version = "2.2.5"
+        constraint_version = "1.1.3"
+        lifecycle_version = "2.2.0"
+        material_version = "1.1.0"
+        dagger_version = "2.27"
+        view_pager_version = "1.0.0"
+        junit_version = "4.12"
+        ext_junit = "1.1.1"
+        runner_version = "1.2.0"
+        espresso_version = "3.2.0"
+        ui_automator = "2.2.0"
+    }
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Core Libs
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.core:core-ktx:$core_version"
+
+    //Design and Views Libraries
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+    implementation "com.google.android.material:material:$material_version"
+    implementation "androidx.viewpager2:viewpager2:$view_pager_version"
+
+    //Room
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    //ViewModel & LiveData
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Dagger
+    implementation "com.google.dagger:dagger:$dagger_version"
+
+    //Annotation Processors
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+
+
+    //Unit tests
+    testImplementation "junit:junit:$junit_version"
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    //Implementation tests
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+    androidTestImplementation "androidx.test:runner:$runner_version"
+    androidTestImplementation "androidx.test:rules:$runner_version"
+}
