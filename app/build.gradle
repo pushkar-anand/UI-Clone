@@ -105,5 +105,6 @@ dependencies {
     androidTestImplementation "androidx.test:runner:$runner_version"
     androidTestImplementation "androidx.test:rules:$runner_version"
     androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+    implementation 'com.android.support:cardview-v7:28.0.0'
 
 }

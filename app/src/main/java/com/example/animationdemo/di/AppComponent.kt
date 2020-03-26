@@ -1,6 +1,7 @@
 package com.example.animationdemo.di
 
 import android.app.Application
+import com.example.animationdemo.ui.fragments.certificate.CertificateFragment
 import com.example.animationdemo.ui.fragments.home.HomeFragment
 import dagger.BindsInstance
 import dagger.Component
@@ -17,4 +18,5 @@ interface AppComponent {
     }
 
     fun inject(homeFragment: HomeFragment)
+    fun inject(certificateFragment: CertificateFragment)
 }

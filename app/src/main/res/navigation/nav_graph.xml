@@ -13,10 +13,28 @@
         <action
             android:id="@+id/action_homeFragment_to_settingsFragment"
             app:destination="@id/settingsItem" />
+        <action
+            android:id="@+id/action_homeFragment_to_certificateFragment"
+            app:destination="@id/certificateFragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popEnterAnim="@anim/fragment_fade_enter"
+            app:popExitAnim="@anim/fragment_fade_exit"
+            app:popUpTo="@id/certificateFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingsItem"
         android:name="com.example.animationdemo.ui.fragments.settings.SettingsFragment"
         android:label="fragment_settings" />
+    <fragment
+        android:id="@+id/certificateFragment"
+        android:name="com.example.animationdemo.ui.fragments.certificate.CertificateFragment"
+        android:label="fragment_certificate"
+        tools:layout="@layout/fragment_certificate">
+        <argument
+            android:name="CERT_ID"
+            android:defaultValue="-1L"
+            app:argType="long" />
+    </fragment>
 
 </navigation>

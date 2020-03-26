@@ -2,6 +2,7 @@ package com.example.animationdemo.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.animationdemo.ui.fragments.certificate.CertificateViewModel
 import com.example.animationdemo.ui.fragments.home.HomeViewModel
 import dagger.Binds
 import dagger.MapKey
@@ -30,5 +31,10 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HomeViewModel::class)
     internal abstract fun homeViewModel(viewModel: HomeViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CertificateViewModel::class)
+    internal abstract fun certificateViewModel(viewModel: CertificateViewModel): ViewModel
 
 }

@@ -20,6 +20,10 @@
         <item>#7C4DFF</item>
     </array>
 
+    <color name="colorViewShade">#646262</color>
+    <color name="colorMiddleCard">#994141B9</color>
+    <color name="colorLastCard">#99DA3C83</color>
+
     <color name="colorIcon">#000000</color>
     <color name="colorIconBackground">#FFFFFF</color>
 </resources>

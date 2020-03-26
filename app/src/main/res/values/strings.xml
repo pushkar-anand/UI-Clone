@@ -31,6 +31,8 @@
     <string name="night_mode_on">Night mode</string>
     <string name="night_mode_off">Day mode</string>
 
+    <string name="certificate_issues_text">This certificate is proof that user has achieved %s with approval from Instructor</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

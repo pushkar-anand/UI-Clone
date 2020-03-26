@@ -102,6 +102,9 @@ class HomeFragment : Fragment() {
 
     private fun showCertificate(certificate: Certificate) {
         Log.d(javaClass.simpleName, "Long Press ${certificate.name}")
+        val navAction =
+            HomeFragmentDirections.actionHomeFragmentToCertificateFragment(certificate.id)
+        findNavController().navigate(navAction)
     }
 
 
