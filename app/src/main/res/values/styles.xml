@@ -12,6 +12,7 @@
         <item name="iconBackgroundColor">@color/colorIconBackground</item>
     </style>
 
+
     <style name="AppTheme.TextView.Heading1" parent="TextAppearance.MaterialComponents.Headline1">
         <item name="android:textColor">@color/colorTextViewHeading1</item>
         <item name="android:textSize">@dimen/sizeTextViewHeading1</item>

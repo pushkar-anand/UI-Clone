@@ -29,8 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="@string/courses"
-            android:textColor="@color/black"
-            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/navDrawerIMG"
             app:layout_constraintTop_toTopOf="@+id/navDrawerIMG" />
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#DD2C00</color>
+    <color name="colorPrimaryDark">#802009</color>
+    <color name="colorAccent">#D50000</color>
 
-    <color name="colorActivityBackground">#313030</color>
+    <color name="colorActivityBackground">#201E1E</color>
 
     <color name="colorTextViewHeading1">#FDFDFD</color>
     <color name="colorTextViewHeading2">#FDFDFD</color>
