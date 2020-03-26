@@ -10,6 +10,7 @@ class CertificateRVHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(certificate: Certificate) {
         itemView.certificateNameTV.text = certificate.name
         itemView.certIllusIMG.setImageResource(certificate.illustration)
+//        Picasso.get().load(certificate.illustration).into(itemView.certIllusIMG)
     }
 
 }

@@ -1,5 +1,6 @@
 package com.example.animationdemo.data.source.local.entities
 
+import androidx.annotation.DrawableRes
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.Ignore
@@ -15,6 +16,7 @@ data class Certificate @JvmOverloads constructor(
     @ColumnInfo(name = "certificate_name")
     var name: String,
 
+    @DrawableRes
     @Ignore
     var illustration: Int = 0
 

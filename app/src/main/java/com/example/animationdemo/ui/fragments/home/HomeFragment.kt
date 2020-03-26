@@ -8,12 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
 import com.example.animationdemo.AnimationDemo
 import com.example.animationdemo.R
 import com.example.animationdemo.adapter.CertificateRVAdapter
 import com.example.animationdemo.adapter.CoursesRVAdapter
 import com.example.animationdemo.data.source.local.entities.Certificate
 import com.example.animationdemo.data.source.local.entities.Course
+import kotlinx.android.synthetic.main.content_home.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import javax.inject.Inject
 
@@ -44,6 +48,12 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initRecyclerViews()
+        val navController = findNavController()
+        AppBarConfiguration(navController.graph, navDrawer)
+        navigationView.setupWithNavController(navController)
+        navDrawerIMG.setOnClickListener {
+            navDrawer.open()
+        }
     }
 
     override fun onResume() {
@@ -76,50 +86,17 @@ class HomeFragment : Fragment() {
     }
 
     private val courseListObserver = Observer<List<Course>> {
-        val courses = addColorAndIllustrationsToCourses(it)
-        coursesRVAdapter.updateCourses(courses)
+        coursesRVAdapter.updateCourses(it)
         nmbrOfCoursesTV.text = requireActivity().resources.getQuantityString(
             R.plurals.no_courses,
-            courses.size,
-            courses.size
+            it.size,
+            it.size
         )
     }
 
     private val certificateListObserver = Observer<List<Certificate>> {
-        val certificates = addIllustrationsToCertificates(it)
-        certificateRVAdapter.updateCertificates(certificates)
+        certificateRVAdapter.updateCertificates(it)
     }
 
-    private fun addColorAndIllustrationsToCourses(list: List<Course>): List<Course> {
-        val colors = requireActivity().resources.getIntArray(R.array.colorCourseCardBackground)
-        val illustrations = listOf(
-            R.drawable.illustration1,
-            R.drawable.illustration2,
-            R.drawable.illustration3
-        )
-
-        val courses = mutableListOf<Course>()
-        list.forEachIndexed { index, course ->
-            course.cardColor = colors[index % colors.size]
-            course.illustration = illustrations[index % illustrations.size]
-            courses.add(course)
-        }
-        return courses
-    }
-
-    private fun addIllustrationsToCertificates(list: List<Certificate>): List<Certificate> {
-        val illustrations = listOf(
-            R.drawable.certificate1,
-            R.drawable.certificate2,
-            R.drawable.illustration3
-        )
-
-        val certificates = mutableListOf<Certificate>()
-        list.forEachIndexed { index, certificate ->
-            certificate.illustration = illustrations[index % illustrations.size]
-            certificates.add(certificate)
-        }
-        return certificates
-    }
 
 }
