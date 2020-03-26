@@ -1,13 +1,30 @@
 package com.example.animationdemo
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.preference.PreferenceManager
 import com.example.animationdemo.di.AppComponent
 import com.example.animationdemo.di.DaggerAppComponent
+import com.example.animationdemo.utils.NightMode
+import java.util.*
 
 class AnimationDemo : Application() {
 
     val appComponent: AppComponent by lazy {
         initializeComponent()
+    }
+
+    override fun onCreate() {
+        super.onCreate()
+
+        val preferences = PreferenceManager.getDefaultSharedPreferences(applicationContext)
+        preferences.getString(
+            getString(R.string.pref_key_night),
+            getString(R.string.pref_night_auto)
+        )?.apply {
+            val mode = NightMode.valueOf(this.toUpperCase(Locale.US))
+            AppCompatDelegate.setDefaultNightMode(mode.value)
+        }
     }
 
     private fun initializeComponent(): AppComponent {

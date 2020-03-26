@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="sizeTextViewHeading1">30sp</dimen>
+    <dimen name="sizeTextViewHeading2">20sp</dimen>
+
+</resources>

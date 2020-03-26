@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--    <item android:gravity="left">
+            <shape
+                android:shape="rectangle"
+                android:useLevel="false">
+                <solid android:color="?attr/iconBackgroundColor" />
+                <size android:height="50dp" android:width="50dp" />
+            </shape>
+        </item>-->
+    <item
+        android:gravity="right"
+        android:left="-30dp">
+        <shape
+            android:shape="oval"
+            android:useLevel="false">
+            <solid android:color="?attr/iconBackgroundColor" />
+            <size
+                android:width="50dp"
+                android:height="50dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,6 +1,30 @@
 <resources>
     <string name="app_name">Animation Demo</string>
 
+    <string name="courses">Courses</string>
+    <plurals name="no_courses">
+        <item quantity="zero">%d Course</item>
+        <item quantity="one">%d Course</item>
+        <item quantity="other">%d Courses</item>
+    </plurals>
+
+    <string name="certificates">Certificates</string>
+    <string name="certificate">Certificate</string>
+
+    <string name="pref_key_night" translatable="false">key_night_mode</string>
+    <string name="pref_night_title">Night mode</string>
+    <string name="pref_night_summary">Select a dark or light theme.</string>
+
+    <string name="pref_night_dialog">Set Night mode</string>
+
+    <string name="pref_night_auto" translatable="false">auto</string>
+    <string name="pref_night_on" translatable="false">on</string>
+    <string name="pref_night_off" translatable="false">off</string>
+
+    <string name="night_mode_auto">Automatic</string>
+    <string name="night_mode_on">Night mode</string>
+    <string name="night_mode_off">Day mode</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

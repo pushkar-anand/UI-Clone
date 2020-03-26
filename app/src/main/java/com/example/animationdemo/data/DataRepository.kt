@@ -3,6 +3,7 @@ package com.example.animationdemo.data
 import androidx.lifecycle.LiveData
 import com.example.animationdemo.data.source.DataSource
 import com.example.animationdemo.data.source.local.LocalDataSource
+import com.example.animationdemo.data.source.local.entities.Certificate
 import com.example.animationdemo.data.source.local.entities.Course
 import javax.inject.Inject
 
@@ -26,5 +27,19 @@ class DataRepository @Inject constructor(
         return localDataSource.getCourse(courseID)
     }
 
-    fun getData() = "Works great."
+    override fun newCertificate(certificate: Certificate) {
+        localDataSource.newCertificate(certificate)
+    }
+
+    override fun updateCertificate(certificate: Certificate) {
+        localDataSource.updateCertificate(certificate)
+    }
+
+    override fun getAllCertificate(): LiveData<List<Certificate>> {
+        return localDataSource.getAllCertificate()
+    }
+
+    override fun getCertificate(certificateID: Long): LiveData<Certificate> {
+        return localDataSource.getCertificate(certificateID)
+    }
 }

@@ -5,7 +5,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:windowBackground">@color/colorActivityBackground</item>
+
+        <item name="iconColor">@color/colorIcon</item>
+        <item name="iconBackgroundColor">@color/colorIconBackground</item>
     </style>
 
 </resources>
