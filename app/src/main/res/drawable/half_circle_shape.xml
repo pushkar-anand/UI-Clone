@@ -10,7 +10,7 @@
         </item>-->
     <item
         android:gravity="right"
-        android:left="-30dp">
+        android:left="-40dp">
         <shape
             android:shape="oval"
             android:useLevel="false">

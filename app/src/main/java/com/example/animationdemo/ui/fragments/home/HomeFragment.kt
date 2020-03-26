@@ -78,6 +78,11 @@ class HomeFragment : Fragment() {
     private val courseListObserver = Observer<List<Course>> {
         val courses = addColorAndIllustrationsToCourses(it)
         coursesRVAdapter.updateCourses(courses)
+        nmbrOfCoursesTV.text = requireActivity().resources.getQuantityString(
+            R.plurals.no_courses,
+            courses.size,
+            courses.size
+        )
     }
 
     private val certificateListObserver = Observer<List<Certificate>> {

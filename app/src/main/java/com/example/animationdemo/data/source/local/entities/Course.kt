@@ -6,7 +6,7 @@ import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "courses")
-data class Course(
+data class Course @JvmOverloads constructor(
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "course_id")
