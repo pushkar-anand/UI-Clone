@@ -2,7 +2,7 @@
 
 ### Build & Installation
 1. Make sure Android Studio is installed. If not download from https://developer.android.com/studio
-2. Clone the repo and checkout to prototype branch.
+2. Clone the repo.
 ```bash 
         git clone https://github.com/pushkar-anand/UI-Clone.git
  ```
