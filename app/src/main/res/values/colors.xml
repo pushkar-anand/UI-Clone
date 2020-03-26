@@ -12,6 +12,11 @@
     <color name="colorTextViewHeading1">#000000</color>
     <color name="colorTextViewHeading2">#000000</color>
 
+    <array name="colorCourseCardBackground">
+        <item>#303F9F</item>
+        <item>#FF5252</item>
+        <item>#7C4DFF</item>
+    </array>
 
     <color name="colorIcon">#000000</color>
     <color name="colorIconBackground">#FFFFFF</color>

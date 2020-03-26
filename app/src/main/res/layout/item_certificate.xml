@@ -2,11 +2,14 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/certificateCard"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="15dp"
     android:padding="10dp"
-    app:cardCornerRadius="15dp">
+    app:cardBackgroundColor="@color/black"
+    app:cardCornerRadius="15dp"
+    app:cardElevation="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
@@ -14,45 +17,47 @@
 
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/certificateNameTV"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:text="TextView"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="UI Design" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/certificateConstantTV"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="@string/certificate"
-            app:layout_constraintEnd_toEndOf="@+id/textView"
-            app:layout_constraintStart_toStartOf="@+id/textView"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/certificateNameTV"
+            app:layout_constraintStart_toStartOf="@+id/certificateNameTV"
+            app:layout_constraintTop_toBottomOf="@+id/certificateNameTV" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/certLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintStart_toEndOf="@+id/certificateNameTV"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_launcher_foreground" />
+            tools:src="@drawable/cert_logo" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/certIllusIMG"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/certificateConstantTV"
             tools:srcCompat="@drawable/half_circle_shape" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -2,6 +2,7 @@ package com.example.animationdemo.data.source.local.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "certificates")
@@ -12,6 +13,9 @@ data class Certificate(
     val id: Long,
 
     @ColumnInfo(name = "certificate_name")
-    var name: String
+    var name: String,
+
+    @Ignore
+    var illustration: Int = 0
 
 )
