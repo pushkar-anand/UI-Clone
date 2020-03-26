@@ -2,6 +2,7 @@ package com.example.animationdemo.ui.fragments.home
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -72,6 +73,7 @@ class HomeFragment : Fragment() {
 
         certificateRVAdapter = CertificateRVAdapter()
         certificateRV.adapter = certificateRVAdapter
+        certificateRVAdapter.onLongPress = ::showCertificate
 
     }
 
@@ -96,6 +98,10 @@ class HomeFragment : Fragment() {
 
     private val certificateListObserver = Observer<List<Certificate>> {
         certificateRVAdapter.updateCertificates(it)
+    }
+
+    private fun showCertificate(certificate: Certificate) {
+        Log.d(javaClass.simpleName, "Long Press ${certificate.name}")
     }
 
 
